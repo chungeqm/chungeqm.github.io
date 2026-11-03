@@ -2,41 +2,267 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <title>Dương Chung | Profile</title>
-  <style>
-    body {
-      background: #101b2b;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    h1 { color: #e7bf79; }
-    a {
-      display: block;
-      background: #d9ad62;
-      color: #111;
-      padding: 15px;
-      margin: 15px auto;
-      max-width: 300px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dương Chung | Personal Profile</title>
+<meta name="theme-color" content="#081525">
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#081525;
+ color:white;
+}
+.page{
+ max-width:520px;
+ min-height:100vh;
+ margin:auto;
+ padding:35px 20px;
+ background:
+ radial-gradient(circle at top,#213b55,#081525 65%);
+}
+.gold{color:#e9bd70}
+header{text-align:center}
+.label{
+ letter-spacing:5px;
+ font-size:12px;
+ color:#e9bd70;
+ margin-bottom:25px;
+}
+.avatar{
+ width:165px;
+ height:165px;
+ border-radius:50%;
+ border:4px solid #edc477;
+ padding:5px;
+ margin:auto;
+ box-shadow:0 0 30px #c9974866;
+}
+.avatar img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ border-radius:50%;
+}
+h1{
+ font-size:34px;
+ margin:24px 0 10px;
+ color:#f3ca80;
+ letter-spacing:1px;
+}
+.position{
+ font-size:21px;
+ font-weight:bold;
+}
+.subtitle{
+ font-size:12px;
+ color:#b8c5d4;
+ margin-top:12px;
+ letter-spacing:1px;
+}
+.intro{
+ margin-top:30px;
+ padding:20px;
+ border:1px solid #d7aa5c;
+ border-radius:16px;
+ background:#ffffff08;
+ line-height:1.7;
+ text-align:center;
+}
+h2{
+ text-align:center;
+ font-size:17px;
+ margin:30px 0 18px;
+ color:#e9bd70;
+}
+.skills{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+.skill{
+ border:1px solid #a98148;
+ border-radius:14px;
+ padding:20px 8px;
+ text-align:center;
+ background:#ffffff08;
+}
+.skill span{
+ display:block;
+ font-size:27px;
+ margin-bottom:9px;
+}
+.skill small{font-size:13px}
+.links{
+ display:grid;
+ gap:12px;
+ margin-top:30px;
+}
+.btn{
+ display:block;
+ padding:16px;
+ border-radius:13px;
+ text-align:center;
+ text-decoration:none;
+ font-weight:bold;
+ font-size:16px;
+ color:white;
+}
+.zalo{background:linear-gradient(90deg,#0084ff,#0055b9)}
+.phone{background:linear-gradient(90deg,#00ad60,#08733f)}
+.email{background:linear-gradient(90deg,#6958ce,#383c98)}
+.save{
+ background:linear-gradient(90deg,#f6d78e,#bd873e);
+ color:#17202b;
+ border:0;
+ width:100%;
+ cursor:pointer;
+}
+footer{
+ text-align:center;
+ margin-top:35px;
+ padding-top:20px;
+ border-top:1px solid #8c7049;
+ color:#9eafc0;
+ font-size:12px;
+ line-height:1.8;
+}
+[hidden]{display:none!important}
+</style>
 </head>
 <body>
-  <h1>DƯƠNG CHUNG</h1>
-  <h3>Engineer – EQM</h3>
-  <p>Equipment & Maintenance</p>
-  <p>Chào mừng đến với profile của tôi!</p>
 
-  <a href="https://zalo.me/SO_DIEN_THOAI">
-    Liên hệ Zalo
-  </a>
+<div class="page">
+<header>
+ <div class="label">PERSONAL PROFILE</div>
+
+ <div class="avatar">
+  <img src="avatar.jpg" alt="Ảnh đại diện Dương Chung"
+       onerror="this.onerror=null;this.src='https://placehold.co/300x300/182b43/e9bd70?text=DC'">
+ </div>
+
+ <h1>DƯƠNG CHUNG</h1>
+ <div class="position">Engineer – EQM</div>
+ <div class="subtitle">
+  EQUIPMENT • MAINTENANCE • AUTOMATION
+ </div>
+</header>
+
+<section class="intro">
+ Kỹ thuật thiết bị, bảo trì và cải tiến
+ tự động hóa trong sản xuất.
+ <br>
+ Không ngừng học hỏi, đổi mới và phát triển.
+</section>
+
+<h2>CHUYÊN MÔN</h2>
+
+<div class="skills">
+ <div class="skill">
+  <span>⚙️</span>
+  <small>PLC & HMI</small>
+ </div>
+ <div class="skill">
+  <span>🛠️</span>
+  <small>Maintenance</small>
+ </div>
+ <div class="skill">
+  <span>🤖</span>
+  <small>Automation</small>
+ </div>
+ <div class="skill">
+  <span>📈</span>
+  <small>Improvement</small>
+ </div>
+</div>
+
+<h2>LIÊN HỆ VỚI TÔI</h2>
+
+<div class="links">
+ <a id="zaloBtn" class="btn zalo" hidden>
+  💬 Nhắn Zalo
+ </a>
+
+ <a id="phoneBtn" class="btn phone" hidden>
+  📞 Gọi điện
+ </a>
+
+ <a id="emailBtn" class="btn email" hidden>
+  ✉️ Gửi Email
+ </a>
+
+ <button id="saveBtn" class="btn save" hidden>
+  👤 Lưu danh bạ
+ </button>
+</div>
+
+<footer>
+ DƯƠNG CHUNG
+ <br>
+ Engineer – EQM
+ <br>
+ © 2026 Personal Profile
+</footer>
+</div>
+
+<script>
+// NHẬP THÔNG TIN CỦA BẠN TẠI ĐÂY
+const CONFIG = {
+ phone: "0374042578",
+ email: "vnoiego@gmail.com",
+ zalo: "0374042578"
+};
+
+const phone = CONFIG.phone.trim();
+const email = CONFIG.email.trim();
+const zalo = CONFIG.zalo.trim();
+
+if(zalo){
+ const btn=document.getElementById("zaloBtn");
+ btn.href=zalo;
+ btn.hidden=false;
+}
+if(phone){
+ const btn=document.getElementById("phoneBtn");
+ btn.href="tel:"+phone;
+ btn.hidden=false;
+}
+if(email){
+ const btn=document.getElementById("emailBtn");
+ btn.href="mailto:"+email;
+ btn.hidden=false;
+}
+
+if(phone || email){
+ const btn=document.getElementById("saveBtn");
+ btn.hidden=false;
+ btn.onclick=function(){
+  const vcard=[
+   "BEGIN:VCARD",
+   "VERSION:3.0",
+   "FN:Dương Chung",
+   "N:Chung;Dương;;;",
+   "TITLE:Engineer - EQM",
+   ...(phone?["TEL;TYPE=CELL:"+phone]:[]),
+   ...(email?["EMAIL:"+email]:[]),
+   "END:VCARD"
+  ].join("\r\n");
+
+  const blob=new Blob([vcard],{
+   type:"text/vcard;charset=utf-8"
+  });
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="Duong_Chung.vcf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+ };
+}
+</script>
+
 </body>
 </html>
-      
