@@ -3,197 +3,226 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dương Chung | Personal Profile</title>
-<meta name="theme-color" content="#081525">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061323">
+<title>Dương Chung | Engineer EQM</title>
 <style>
+:root{
+ --gold:#f1c979;
+ --navy:#071525;
+}
 *{box-sizing:border-box}
 body{
  margin:0;
- font-family:Arial,sans-serif;
- background:#081525;
+ background:#061323;
  color:white;
+ font-family:Arial,sans-serif;
 }
-.page{
- max-width:520px;
+.profile{
+ max-width:560px;
  min-height:100vh;
  margin:auto;
- padding:35px 20px;
+ padding:38px 22px 30px;
+ position:relative;
+ overflow:hidden;
  background:
- radial-gradient(circle at top,#213b55,#081525 65%);
+ linear-gradient(155deg,transparent 9%,#d9aa5630 9.2%,transparent 10%),
+ radial-gradient(ellipse at 50% 8%,#28425d 0%,transparent 45%),
+ linear-gradient(155deg,#071525,#0b1c30 65%,#071525);
 }
-.gold{color:#e9bd70}
-header{text-align:center}
-.label{
+.profile:before,.profile:after{
+ content:"";
+ position:absolute;
+ width:180px;
+ height:25px;
+ background:linear-gradient(90deg,#a76b27,#ffdf91,#9a632b);
+ transform:rotate(-45deg);
+ opacity:.8;
+ pointer-events:none;
+}
+.profile:before{top:10px;left:-70px}
+.profile:after{bottom:30px;right:-85px}
+header{text-align:center;position:relative}
+.eyebrow{
+ color:var(--gold);
  letter-spacing:5px;
  font-size:12px;
- color:#e9bd70;
  margin-bottom:25px;
 }
 .avatar{
- width:165px;
- height:165px;
- border-radius:50%;
- border:4px solid #edc477;
- padding:5px;
+ width:190px;height:190px;
  margin:auto;
- box-shadow:0 0 30px #c9974866;
+ border:5px solid var(--gold);
+ border-radius:50%;
+ padding:5px;
+ box-shadow:0 0 28px #ffce7280;
+ background:#16283b;
 }
 .avatar img{
- width:100%;
- height:100%;
+ width:100%;height:100%;
  object-fit:cover;
  border-radius:50%;
 }
 h1{
- font-size:34px;
+ font-size:clamp(32px,8vw,44px);
+ color:var(--gold);
  margin:24px 0 10px;
- color:#f3ca80;
- letter-spacing:1px;
+ text-shadow:0 2px 12px #d59b4840;
 }
-.position{
- font-size:21px;
- font-weight:bold;
-}
+.role{font-size:23px;font-weight:bold}
 .subtitle{
+ color:#bac6d6;
  font-size:12px;
- color:#b8c5d4;
- margin-top:12px;
  letter-spacing:1px;
+ margin-top:15px;
 }
 .intro{
- margin-top:30px;
- padding:20px;
- border:1px solid #d7aa5c;
+ margin:30px 0;
+ border:1px solid var(--gold);
  border-radius:16px;
+ padding:22px 16px;
  background:#ffffff08;
  line-height:1.7;
  text-align:center;
 }
 h2{
  text-align:center;
- font-size:17px;
- margin:30px 0 18px;
- color:#e9bd70;
+ font-size:19px;
+ color:var(--gold);
+ margin:30px 0 22px;
+ letter-spacing:1px;
 }
 .skills{
  display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:12px;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:14px;
 }
 .skill{
- border:1px solid #a98148;
- border-radius:14px;
- padding:20px 8px;
+ border:1px solid #b58b50;
+ border-radius:18px;
+ background:linear-gradient(145deg,#1b3047,#0c192b);
+ padding:22px 8px;
  text-align:center;
- background:#ffffff08;
+ box-shadow:inset 0 0 15px #ffffff06;
 }
-.skill span{
- display:block;
- font-size:27px;
- margin-bottom:9px;
+.skill svg{
+ width:35px;height:35px;
+ fill:none;stroke:var(--gold);
+ stroke-width:1.8;
+ stroke-linecap:round;
+ stroke-linejoin:round;
+ margin-bottom:12px;
 }
-.skill small{font-size:13px}
+.skill div{font-size:14px}
 .links{
  display:grid;
- gap:12px;
- margin-top:30px;
+ gap:13px;
+ margin-top:24px;
 }
 .btn{
- display:block;
- padding:16px;
- border-radius:13px;
- text-align:center;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ min-height:59px;
+ border-radius:16px;
  text-decoration:none;
- font-weight:bold;
- font-size:16px;
  color:white;
-}
-.zalo{background:linear-gradient(90deg,#0084ff,#0055b9)}
-.phone{background:linear-gradient(90deg,#00ad60,#08733f)}
-.email{background:linear-gradient(90deg,#6958ce,#383c98)}
-.save{
- background:linear-gradient(90deg,#f6d78e,#bd873e);
- color:#17202b;
- border:0;
- width:100%;
+ font-size:17px;
+ font-weight:bold;
+ border:1px solid #ffffff35;
+ box-shadow:0 5px 16px #0005,inset 0 1px 5px #fff3;
  cursor:pointer;
 }
+.zalo{background:linear-gradient(110deg,#049dff,#0752ba)}
+.phone{background:linear-gradient(110deg,#08b65a,#00663c)}
+.email{background:linear-gradient(110deg,#7962df,#313b91)}
+.save{
+ background:linear-gradient(110deg,#ffe39b,#b8823a);
+ color:#17202c;
+}
+button{font-family:inherit;width:100%}
 footer{
  text-align:center;
- margin-top:35px;
- padding-top:20px;
- border-top:1px solid #8c7049;
- color:#9eafc0;
- font-size:12px;
- line-height:1.8;
+ border-top:1px solid #ad854b;
+ margin-top:42px;
+ padding-top:24px;
+ color:#aab8c9;
+ font-size:13px;
+ line-height:2;
 }
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
-
-<div class="page">
+<main class="profile">
 <header>
- <div class="label">PERSONAL PROFILE</div>
-
+ <div class="eyebrow">PERSONAL PROFILE</div>
  <div class="avatar">
-  <img src="avatar.jpg" alt="Ảnh đại diện Dương Chung"
-       onerror="this.onerror=null;this.src='https://placehold.co/300x300/182b43/e9bd70?text=DC'">
+  <img src="avatar.jpg" alt="Dương Chung"
+   onerror="this.onerror=null;this.src='https://placehold.co/300x300/182b43/f1c979?text=DC'">
  </div>
-
  <h1>DƯƠNG CHUNG</h1>
- <div class="position">Engineer – EQM</div>
+ <div class="role">Engineer – EQM</div>
  <div class="subtitle">
   EQUIPMENT • MAINTENANCE • AUTOMATION
  </div>
 </header>
 
 <section class="intro">
- Kỹ thuật thiết bị, bảo trì và cải tiến
+ ⚙️ Kỹ thuật thiết bị, bảo trì và cải tiến
  tự động hóa trong sản xuất.
  <br>
  Không ngừng học hỏi, đổi mới và phát triển.
 </section>
 
 <h2>CHUYÊN MÔN</h2>
-
-<div class="skills">
+<section class="skills">
  <div class="skill">
-  <span>⚙️</span>
-  <small>PLC & HMI</small>
+  <svg viewBox="0 0 24 24">
+   <rect x="3" y="4" width="18" height="16" rx="2"/>
+   <path d="M8 4v16M16 4v16M5 9h2M5 14h2M10 9h4M10 14h4M18 9h1M18 14h1"/>
+  </svg>
+  <div>PLC & HMI</div>
  </div>
  <div class="skill">
-  <span>🛠️</span>
-  <small>Maintenance</small>
+  <svg viewBox="0 0 24 24">
+   <path d="M14 7a5 5 0 0 0-6 6L3 18l3 3 5-5a5 5 0 0 0 6-6"/>
+   <path d="M14 7l3 3 4-4-3-3z"/>
+  </svg>
+  <div>Maintenance</div>
  </div>
  <div class="skill">
-  <span>🤖</span>
-  <small>Automation</small>
+  <svg viewBox="0 0 24 24">
+   <path d="M4 20h16M8 20v-6l4-3 3 3 3-4"/>
+   <circle cx="12" cy="6" r="2"/>
+   <circle cx="18" cy="10" r="2"/>
+   <path d="M8 14l-3-3"/>
+  </svg>
+  <div>Automation</div>
  </div>
  <div class="skill">
-  <span>📈</span>
-  <small>Improvement</small>
+  <svg viewBox="0 0 24 24">
+   <path d="M3 19l6-6 4 3 8-10"/>
+   <path d="M15 6h6v6"/>
+   <path d="M3 4v16h18"/>
+  </svg>
+  <div>Improvement</div>
  </div>
-</div>
+</section>
 
 <h2>LIÊN HỆ VỚI TÔI</h2>
-
 <div class="links">
  <a id="zaloBtn" class="btn zalo" hidden>
-  💬 Nhắn Zalo
+  💬 &nbsp; Nhắn Zalo
  </a>
-
  <a id="phoneBtn" class="btn phone" hidden>
-  📞 Gọi điện
+  📞 &nbsp; Gọi điện
  </a>
-
  <a id="emailBtn" class="btn email" hidden>
-  ✉️ Gửi Email
+  ✉️ &nbsp; Gửi Email
  </a>
-
  <button id="saveBtn" class="btn save" hidden>
-  👤 Lưu danh bạ
+  👤 &nbsp; Lưu danh bạ
  </button>
 </div>
 
@@ -204,41 +233,39 @@ footer{
  <br>
  © 2026 Personal Profile
 </footer>
-</div>
+</main>
 
 <script>
-// NHẬP THÔNG TIN CỦA BẠN TẠI ĐÂY
-const CONFIG = {
- phone: "0374042578",
- email: "vnoiego@gmail.com",
- zalo: "https://zalo.me/0374042578"
+const CONFIG={
+ phone:"",
+ email:"",
+ zalo:""
 };
 
-const phone = CONFIG.phone.trim();
-const email = CONFIG.email.trim();
-const zalo = CONFIG.zalo.trim();
+const phone=CONFIG.phone.trim();
+const email=CONFIG.email.trim();
+const zalo=CONFIG.zalo.trim();
 
-if(zalo){
- const btn=document.getElementById("zaloBtn");
- btn.href=zalo;
- btn.hidden=false;
+if(/^https:\/\/zalo\.me\//i.test(zalo)){
+ const el=document.getElementById("zaloBtn");
+ el.href=zalo;
+ el.hidden=false;
 }
 if(phone){
- const btn=document.getElementById("phoneBtn");
- btn.href="tel:"+phone;
- btn.hidden=false;
+ const el=document.getElementById("phoneBtn");
+ el.href="tel:"+phone;
+ el.hidden=false;
 }
 if(email){
- const btn=document.getElementById("emailBtn");
- btn.href="mailto:"+email;
- btn.hidden=false;
+ const el=document.getElementById("emailBtn");
+ el.href="mailto:"+email;
+ el.hidden=false;
 }
-
-if(phone || email){
- const btn=document.getElementById("saveBtn");
- btn.hidden=false;
- btn.onclick=function(){
-  const vcard=[
+if(phone||email){
+ const el=document.getElementById("saveBtn");
+ el.hidden=false;
+ el.onclick=()=>{
+  const lines=[
    "BEGIN:VCARD",
    "VERSION:3.0",
    "FN:Dương Chung",
@@ -247,11 +274,11 @@ if(phone || email){
    ...(phone?["TEL;TYPE=CELL:"+phone]:[]),
    ...(email?["EMAIL:"+email]:[]),
    "END:VCARD"
-  ].join("\r\n");
-
-  const blob=new Blob([vcard],{
-   type:"text/vcard;charset=utf-8"
-  });
+  ];
+  const blob=new Blob(
+   [lines.join("\r\n")],
+   {type:"text/vcard;charset=utf-8"}
+  );
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");
   a.href=url;
@@ -263,6 +290,5 @@ if(phone || email){
  };
 }
 </script>
-
 </body>
 </html>
