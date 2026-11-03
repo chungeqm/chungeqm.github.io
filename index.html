@@ -3,292 +3,721 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#061323">
-<title>Dương Chung | Engineer EQM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071423">
+<title>Dương Chung | Personal Profile</title>
+
 <style>
-:root{
- --gold:#f1c979;
- --navy:#071525;
+:root {
+  --gold:#f4cd80;
+  --gold2:#b98235;
+  --navy:#071423;
+  --white:#f7f7fa;
 }
-*{box-sizing:border-box}
-body{
- margin:0;
- background:#061323;
- color:white;
- font-family:Arial,sans-serif;
+
+* {
+  box-sizing:border-box;
 }
-.profile{
- max-width:560px;
- min-height:100vh;
- margin:auto;
- padding:38px 22px 30px;
- position:relative;
- overflow:hidden;
- background:
- linear-gradient(155deg,transparent 9%,#d9aa5630 9.2%,transparent 10%),
- radial-gradient(ellipse at 50% 8%,#28425d 0%,transparent 45%),
- linear-gradient(155deg,#071525,#0b1c30 65%,#071525);
+
+html {
+  scroll-behavior:smooth;
 }
-.profile:before,.profile:after{
- content:"";
- position:absolute;
- width:180px;
- height:25px;
- background:linear-gradient(90deg,#a76b27,#ffdf91,#9a632b);
- transform:rotate(-45deg);
- opacity:.8;
- pointer-events:none;
+
+body {
+  margin:0;
+  background:#06111e;
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
 }
-.profile:before{top:10px;left:-70px}
-.profile:after{bottom:30px;right:-85px}
-header{text-align:center;position:relative}
-.eyebrow{
- color:var(--gold);
- letter-spacing:5px;
- font-size:12px;
- margin-bottom:25px;
+
+.profile {
+  width:100%;
+  max-width:850px;
+  min-height:100vh;
+  margin:auto;
+  position:relative;
+  overflow:hidden;
+  padding:32px 35px 48px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(3,13,25,.25),
+      rgba(3,13,25,.92) 42%,
+      #071423 80%
+    ),
+    url("factory.jpg") center top / 100% auto
+    no-repeat,
+    #071423;
 }
-.avatar{
- width:190px;height:190px;
- margin:auto;
- border:5px solid var(--gold);
- border-radius:50%;
- padding:5px;
- box-shadow:0 0 28px #ffce7280;
- background:#16283b;
+
+/* Trang trí vàng kim */
+.corner {
+  position:absolute;
+  width:240px;
+  height:65px;
+  background:linear-gradient(
+    90deg,
+    #6e451c,
+    #f8d98b,
+    #a56c2c
+  );
+  box-shadow:0 0 15px #e8bb6070;
+  transform:rotate(-45deg);
+  pointer-events:none;
 }
-.avatar img{
- width:100%;height:100%;
- object-fit:cover;
- border-radius:50%;
+
+.corner.top {
+  top:0;
+  left:-95px;
 }
-h1{
- font-size:clamp(32px,8vw,44px);
- color:var(--gold);
- margin:24px 0 10px;
- text-shadow:0 2px 12px #d59b4840;
+
+.corner.bottom {
+  bottom:0;
+  right:-100px;
 }
-.role{font-size:23px;font-weight:bold}
-.subtitle{
- color:#bac6d6;
- font-size:12px;
- letter-spacing:1px;
- margin-top:15px;
+
+.content {
+  position:relative;
+  z-index:2;
 }
-.intro{
- margin:30px 0;
- border:1px solid var(--gold);
- border-radius:16px;
- padding:22px 16px;
- background:#ffffff08;
- line-height:1.7;
- text-align:center;
+
+/* Header */
+.heading {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:22px;
 }
-h2{
- text-align:center;
- font-size:19px;
- color:var(--gold);
- margin:30px 0 22px;
- letter-spacing:1px;
+
+.heading span {
+  width:55px;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--gold)
+  );
 }
-.skills{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:14px;
+
+.heading span:last-child {
+  transform:rotate(180deg);
 }
-.skill{
- border:1px solid #b58b50;
- border-radius:18px;
- background:linear-gradient(145deg,#1b3047,#0c192b);
- padding:22px 8px;
- text-align:center;
- box-shadow:inset 0 0 15px #ffffff06;
+
+.heading p {
+  margin:0;
+  font-size:15px;
+  letter-spacing:5px;
+  white-space:nowrap;
 }
-.skill svg{
- width:35px;height:35px;
- fill:none;stroke:var(--gold);
- stroke-width:1.8;
- stroke-linecap:round;
- stroke-linejoin:round;
- margin-bottom:12px;
+
+/* Avatar */
+.avatar-wrap {
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  padding:7px;
+  margin:0 auto 20px;
+  background:linear-gradient(
+    135deg,
+    #fff0af,
+    #b17a31,
+    #ffe9a2
+  );
+  box-shadow:
+    0 0 14px #f5c36b,
+    0 0 35px #e4a94a70;
 }
-.skill div{font-size:14px}
-.links{
- display:grid;
- gap:13px;
- margin-top:24px;
+
+.avatar-wrap img {
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  background:#152b41;
 }
-.btn{
- display:flex;
- justify-content:center;
- align-items:center;
- min-height:59px;
- border-radius:16px;
- text-decoration:none;
- color:white;
- font-size:17px;
- font-weight:bold;
- border:1px solid #ffffff35;
- box-shadow:0 5px 16px #0005,inset 0 1px 5px #fff3;
- cursor:pointer;
+
+.name {
+  margin:12px 0;
+  text-align:center;
+  font-size:clamp(36px,7vw,60px);
+  font-weight:900;
+  letter-spacing:1px;
+  background:linear-gradient(
+    180deg,
+    #fff1ba,
+    #e8b75b 55%,
+    #a46d27
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 3px 2px #0009);
 }
-.zalo{background:linear-gradient(110deg,#049dff,#0752ba)}
-.phone{background:linear-gradient(110deg,#08b65a,#00663c)}
-.email{background:linear-gradient(110deg,#7962df,#313b91)}
-.save{
- background:linear-gradient(110deg,#ffe39b,#b8823a);
- color:#17202c;
+
+.role {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  font-size:clamp(20px,4vw,29px);
+  font-weight:bold;
 }
-button{font-family:inherit;width:100%}
-footer{
- text-align:center;
- border-top:1px solid #ad854b;
- margin-top:42px;
- padding-top:24px;
- color:#aab8c9;
- font-size:13px;
- line-height:2;
+
+.role:before,
+.role:after {
+  content:"";
+  width:45px;
+  height:1px;
+  background:var(--gold);
 }
-[hidden]{display:none!important}
+
+.subtitle {
+  text-align:center;
+  margin:18px 0 28px;
+  color:#c6cbd5;
+  font-size:clamp(12px,2.7vw,19px);
+}
+
+.subtitle b {
+  color:var(--gold);
+  margin:0 7px;
+}
+
+/* Giới thiệu */
+.intro {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:20px 25px;
+  border:1.5px solid var(--gold);
+  border-radius:20px;
+  background:rgba(8,22,38,.75);
+  box-shadow:0 0 18px #0008;
+}
+
+.intro-icon {
+  flex-shrink:0;
+  font-size:43px;
+  color:var(--gold);
+  padding-right:20px;
+  border-right:1px solid var(--gold);
+}
+
+.intro p {
+  margin:0;
+  font-size:17px;
+  line-height:1.6;
+}
+
+/* Chuyên môn */
+.skills {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:13px;
+  margin-top:23px;
+}
+
+.skill {
+  min-height:125px;
+  padding:17px 5px;
+  border:1px solid #a47c44;
+  border-radius:20px;
+  background:linear-gradient(
+    145deg,
+    rgba(33,52,68,.85),
+    rgba(5,17,30,.92)
+  );
+  box-shadow:inset 0 1px 10px #ffffff0c;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+  transition:.3s;
+}
+
+.skill:hover {
+  transform:translateY(-4px);
+  border-color:var(--gold);
+}
+
+.skill svg {
+  width:37px;
+  height:37px;
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.skill span {
+  font-size:13px;
+}
+
+/* Liên hệ */
+.contact {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:28px;
+}
+
+.btn {
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 6px;
+  border:1px solid #ffffff35;
+  border-radius:19px;
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  font-family:inherit;
+  box-shadow:
+    inset 0 2px 7px #ffffff3b,
+    0 5px 12px #0007;
+  transition:.2s;
+}
+
+.btn:active {
+  transform:scale(.97);
+}
+
+.btn svg {
+  width:23px;
+  height:23px;
+  flex-shrink:0;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.zalo {
+  background:linear-gradient(120deg,#009fff,#0053bb);
+}
+
+.phone {
+  background:linear-gradient(120deg,#04bc4d,#00633c);
+}
+
+.email {
+  background:linear-gradient(120deg,#7965dc,#34398f);
+}
+
+.save {
+  width:100%;
+  margin-top:17px;
+  min-height:73px;
+  background:linear-gradient(
+    110deg,
+    #ffe59e,
+    #e2b65f,
+    #b67c31
+  );
+  color:#18212a;
+  font-size:21px;
+  border-color:#ffe7a7;
+}
+
+/* Cuối trang */
+.footer-title {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin:35px 0 25px;
+  font-size:19px;
+}
+
+.footer-title:before,
+.footer-title:after {
+  content:"";
+  width:55px;
+  height:1px;
+  background:var(--gold);
+}
+
+.footer-info {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.info {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.info-icon {
+  width:42px;
+  height:42px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-size:21px;
+  flex-shrink:0;
+}
+
+.share {
+  cursor:pointer;
+  background:none;
+  color:inherit;
+  border:0;
+  text-align:left;
+  font:inherit;
+}
+
+.copyright {
+  text-align:center;
+  color:#8492a4;
+  font-size:11px;
+  margin-top:35px;
+}
+
+[hidden] {
+  display:none!important;
+}
+
+/* Điện thoại */
+@media(max-width:600px) {
+  .profile {
+    padding:30px 17px 35px;
+  }
+
+  .avatar-wrap {
+    width:180px;
+    height:180px;
+  }
+
+  .heading p {
+    font-size:12px;
+    letter-spacing:3px;
+  }
+
+  .heading span {
+    width:25px;
+  }
+
+  .intro {
+    gap:12px;
+    padding:15px;
+  }
+
+  .intro-icon {
+    font-size:30px;
+    padding-right:12px;
+  }
+
+  .intro p {
+    font-size:13px;
+  }
+
+  .skills {
+    gap:7px;
+  }
+
+  .skill {
+    min-height:95px;
+    padding:12px 3px;
+    border-radius:13px;
+    gap:9px;
+  }
+
+  .skill svg {
+    width:28px;
+    height:28px;
+  }
+
+  .skill span {
+    font-size:10px;
+  }
+
+  .contact {
+    gap:7px;
+  }
+
+  .btn {
+    min-height:55px;
+    font-size:12px;
+    gap:4px;
+    border-radius:13px;
+  }
+
+  .btn svg {
+    width:17px;
+    height:17px;
+  }
+
+  .save {
+    font-size:18px;
+    min-height:65px;
+  }
+
+  .footer-info {
+    gap:5px;
+  }
+
+  .info {
+    flex-direction:column;
+    text-align:center;
+    font-size:10px;
+    gap:7px;
+  }
+
+  .info-icon {
+    width:39px;
+    height:39px;
+  }
+
+  .footer-title {
+    font-size:16px;
+  }
+}
 </style>
 </head>
+
 <body>
 <main class="profile">
+<div class="corner top"></div>
+<div class="corner bottom"></div>
+
+<div class="content">
+
 <header>
- <div class="eyebrow">PERSONAL PROFILE</div>
- <div class="avatar">
-  <img src="avatar.jpg" alt="Dương Chung"
-   onerror="this.onerror=null;this.src='https://placehold.co/300x300/182b43/f1c979?text=DC'">
- </div>
- <h1>DƯƠNG CHUNG</h1>
- <div class="role">Engineer – EQM</div>
- <div class="subtitle">
-  EQUIPMENT • MAINTENANCE • AUTOMATION
- </div>
+  <div class="heading">
+    <span></span>
+    <p>PERSONAL PROFILE</p>
+    <span></span>
+  </div>
+
+  <div class="avatar-wrap">
+    <img
+      src="avatar.jpg"
+      alt="Dương Chung"
+      onerror="this.onerror=null;this.src='https://placehold.co/300x300/172b43/f4cd80?text=DC'">
+  </div>
+
+  <h1 class="name">DƯƠNG CHUNG</h1>
+
+  <div class="role">
+    Engineer – EQM
+  </div>
+
+  <div class="subtitle">
+    Equipment <b>•</b>
+    Maintenance <b>•</b>
+    Automation
+  </div>
 </header>
 
 <section class="intro">
- ⚙️ Kỹ thuật thiết bị, bảo trì và cải tiến
- tự động hóa trong sản xuất.
- <br>
- Không ngừng học hỏi, đổi mới và phát triển.
+  <div class="intro-icon">⚙</div>
+  <p>
+    Kỹ thuật thiết bị, bảo trì và cải tiến
+    tự động hóa trong sản xuất.
+  </p>
 </section>
 
-<h2>CHUYÊN MÔN</h2>
 <section class="skills">
- <div class="skill">
-  <svg viewBox="0 0 24 24">
-   <rect x="3" y="4" width="18" height="16" rx="2"/>
-   <path d="M8 4v16M16 4v16M5 9h2M5 14h2M10 9h4M10 14h4M18 9h1M18 14h1"/>
-  </svg>
-  <div>PLC & HMI</div>
- </div>
- <div class="skill">
-  <svg viewBox="0 0 24 24">
-   <path d="M14 7a5 5 0 0 0-6 6L3 18l3 3 5-5a5 5 0 0 0 6-6"/>
-   <path d="M14 7l3 3 4-4-3-3z"/>
-  </svg>
-  <div>Maintenance</div>
- </div>
- <div class="skill">
-  <svg viewBox="0 0 24 24">
-   <path d="M4 20h16M8 20v-6l4-3 3 3 3-4"/>
-   <circle cx="12" cy="6" r="2"/>
-   <circle cx="18" cy="10" r="2"/>
-   <path d="M8 14l-3-3"/>
-  </svg>
-  <div>Automation</div>
- </div>
- <div class="skill">
-  <svg viewBox="0 0 24 24">
-   <path d="M3 19l6-6 4 3 8-10"/>
-   <path d="M15 6h6v6"/>
-   <path d="M3 4v16h18"/>
-  </svg>
-  <div>Improvement</div>
- </div>
+
+  <div class="skill">
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M8 3v18M16 3v18"/>
+      <path d="M5 8h2M5 13h2M10 8h4M10 13h4M18 8h1M18 13h1"/>
+    </svg>
+    <span>PLC & HMI</span>
+  </div>
+
+  <div class="skill">
+    <svg viewBox="0 0 24 24">
+      <path d="M14 7a5 5 0 0 0-6 6L3 18l3 3 5-5a5 5 0 0 0 6-6"/>
+      <path d="M14 7l3 3 4-4-3-3z"/>
+    </svg>
+    <span>Maintenance</span>
+  </div>
+
+  <div class="skill">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 20h16M8 20v-6l4-3 3 3 3-4"/>
+      <circle cx="12" cy="6" r="2"/>
+      <circle cx="18" cy="10" r="2"/>
+      <path d="M8 14l-3-3"/>
+    </svg>
+    <span>Automation</span>
+  </div>
+
+  <div class="skill">
+    <svg viewBox="0 0 24 24">
+      <path d="M3 19l6-6 4 3 8-10"/>
+      <path d="M15 6h6v6"/>
+      <path d="M3 4v16h18"/>
+    </svg>
+    <span>Improvement</span>
+  </div>
+
 </section>
 
-<h2>LIÊN HỆ VỚI TÔI</h2>
-<div class="links">
- <a id="zaloBtn" class="btn zalo" hidden>
-  💬 &nbsp; Nhắn Zalo
- </a>
- <a id="phoneBtn" class="btn phone" hidden>
-  📞 &nbsp; Gọi điện
- </a>
- <a id="emailBtn" class="btn email" hidden>
-  ✉️ &nbsp; Gửi Email
- </a>
- <button id="saveBtn" class="btn save" hidden>
-  👤 &nbsp; Lưu danh bạ
- </button>
+<section class="contact">
+
+  <a id="zaloBtn" class="btn zalo" hidden>
+    <svg viewBox="0 0 24 24">
+      <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.4A8.5 8.5 0 1 1 21 11.5Z"/>
+    </svg>
+    Nhắn Zalo
+  </a>
+
+  <a id="phoneBtn" class="btn phone" hidden>
+    <svg viewBox="0 0 24 24">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.7L7.1 10a16 16 0 0 0 6.9 6.9l1.6-1.9a2 2 0 0 1 1.7-.6l3 .5a2 2 0 0 1 1.7 2Z"/>
+    </svg>
+    Gọi điện
+  </a>
+
+  <a id="emailBtn" class="btn email" hidden>
+    <svg viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="m2 6 10 7 10-7"/>
+    </svg>
+    Gửi Email
+  </a>
+
+</section>
+
+<button id="saveBtn" class="btn save">
+  ▣ &nbsp; Lưu danh bạ
+</button>
+
+<div class="footer-title">
+  Kết nối với tôi
 </div>
 
-<footer>
- DƯƠNG CHUNG
- <br>
- Engineer – EQM
- <br>
- © 2026 Personal Profile
-</footer>
+<section class="footer-info">
+
+  <div class="info">
+    <div class="info-icon">⌖</div>
+    <span>KCN Yên Bình<br>Thái Nguyên</span>
+  </div>
+
+  <div class="info">
+    <div class="info-icon">▦</div>
+    <span>EQM<br>SRTECH</span>
+  </div>
+
+  <button class="info share" id="shareBtn">
+    <div class="info-icon">▦</div>
+    <span>Chia sẻ<br>Profile</span>
+  </button>
+
+</section>
+
+<div class="copyright">
+  © 2026 Dương Chung · Personal Profile
+</div>
+
+</div>
 </main>
 
 <script>
-const CONFIG={
- phone:"",
- email:"",
- zalo:""
+/* THAY THÔNG TIN CÁ NHÂN Ở ĐÂY */
+const CONFIG = {
+  phone: "",
+  email: "",
+  zalo: ""
 };
 
-const phone=CONFIG.phone.trim();
-const email=CONFIG.email.trim();
-const zalo=CONFIG.zalo.trim();
+const phone = CONFIG.phone.trim();
+const email = CONFIG.email.trim();
+const zalo = CONFIG.zalo.trim();
 
-if(/^https:\/\/zalo\.me\//i.test(zalo)){
- const el=document.getElementById("zaloBtn");
- el.href=zalo;
- el.hidden=false;
+const zaloBtn = document.getElementById("zaloBtn");
+const phoneBtn = document.getElementById("phoneBtn");
+const emailBtn = document.getElementById("emailBtn");
+
+if (/^https:\/\/zalo\.me\/.+/i.test(zalo)) {
+  zaloBtn.href = zalo;
+  zaloBtn.hidden = false;
 }
-if(phone){
- const el=document.getElementById("phoneBtn");
- el.href="tel:"+phone;
- el.hidden=false;
+
+if (phone) {
+  phoneBtn.href = "tel:" + phone;
+  phoneBtn.hidden = false;
 }
-if(email){
- const el=document.getElementById("emailBtn");
- el.href="mailto:"+email;
- el.hidden=false;
+
+if (email) {
+  emailBtn.href = "mailto:" + email;
+  emailBtn.hidden = false;
 }
-if(phone||email){
- const el=document.getElementById("saveBtn");
- el.hidden=false;
- el.onclick=()=>{
-  const lines=[
-   "BEGIN:VCARD",
-   "VERSION:3.0",
-   "FN:Dương Chung",
-   "N:Chung;Dương;;;",
-   "TITLE:Engineer - EQM",
-   ...(phone?["TEL;TYPE=CELL:"+phone]:[]),
-   ...(email?["EMAIL:"+email]:[]),
-   "END:VCARD"
-  ];
-  const blob=new Blob(
-   [lines.join("\r\n")],
-   {type:"text/vcard;charset=utf-8"}
-  );
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url;
-  a.download="Duong_Chung.vcf";
+
+/* LƯU DANH BẠ */
+document.getElementById("saveBtn").onclick = function() {
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "FN:Dương Chung",
+    "N:Chung;Dương;;;",
+    "ORG:SRTECH",
+    "TITLE:Engineer - EQM",
+    ...(phone ? ["TEL;TYPE=CELL:" + phone] : []),
+    ...(email ? ["EMAIL:" + email] : []),
+    "URL:https://chungeqm.github.io/",
+    "END:VCARD"
+  ].join("\r\n");
+
+  const blob = new Blob([vcard], {
+    type:"text/vcard;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "Duong_Chung.vcf";
   document.body.appendChild(a);
   a.click();
   a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
- };
-}
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+
+/* CHIA SẺ WEBSITE */
+document.getElementById("shareBtn").onclick = async function() {
+  const data = {
+    title:"Dương Chung | Engineer EQM",
+    url:window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(data);
+    } catch(e) {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(data.url);
+      alert("Đã sao chép liên kết profile");
+    } catch(e) {
+      prompt("Sao chép liên kết:", data.url);
+    }
+  }
+};
 </script>
+
 </body>
 </html>
